@@ -4,6 +4,14 @@
   <b>Name:</b>
   <%= @topic.name %>
 </p>
+<p>
+  <b>Discussion started by:</b>
+  <% if @topic.user.nil? %>
+  <%= "God" %>
+  <% else %>
+  <%= @topic.user.name %>
+  <% end %>
+</p>
 
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
